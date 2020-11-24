@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 2206271108
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 29f0f716918ca28397781dd0e73f156e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 036dd24631ada9e80c7c8b7570f48b9f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+Assets:
+- Assets/OnQ Ultimate FX Pack 1 Cartoon/Staging/Meshes/FX_Staging_Box_1.FBX
+Dependencies: []

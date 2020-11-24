@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 4105295024
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: fbx
+      Dependencies: {}
+    Info_1:
+      Name: snow
+      Dependencies: {}
+    Info_2:
+      Name: testbundle
+      Dependencies: {}
