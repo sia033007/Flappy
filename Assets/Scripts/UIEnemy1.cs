@@ -39,18 +39,10 @@ public class UIEnemy1 : MonoBehaviour {
 	public GameObject coin;
 	public GameObject pointer,warn;
 	public GameObject but1,but2,but3,but4,but5,but6;
-	
-
-	void Awake () {
-		
-
-
-	}
 
 	void Start () {
 		StartCoroutine(point());
 		StartCoroutine (warning());
-		UIManager2.coin_score = ObscuredPrefs.GetInt ("Score");
 		
 		if (MainMenu3.chnum == 1) {
 
@@ -86,8 +78,7 @@ public class UIEnemy1 : MonoBehaviour {
 	}
 
 	void Update () {
-		coin_text.text = UIManager2.coin_score.ToString ();
-		ObscuredPrefs.SetInt ("Score", UIManager2.coin_score);
+		coin_text.text =""+DBManager.coin;
 		
         timer += Time.deltaTime;
 
@@ -253,8 +244,8 @@ public class UIEnemy1 : MonoBehaviour {
 	}
 
 	public void edame (){
-		if(UIManager2.coin_score>=110){
-		   ObscuredPrefs.SetInt ("Score", UIManager2.coin_score-=110);
+		if(DBManager.coin>=110){
+		   DBManager.coin-=110;
 		   slider1.value=0;
 		   aud[0].UnPause();
 		   aud[1].UnPause();

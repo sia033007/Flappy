@@ -26,7 +26,7 @@ public class Login : MonoBehaviour
             if(request.downloadHandler.text[0] == '0')
             {
                 DBManager.username = nameField.text;
-                UIManager2.coin_score = int.Parse(request.downloadHandler.text.Split('\t')[1]);
+                DBManager.coin = int.Parse(request.downloadHandler.text.Split('\t')[1]);
                 DBManager.level = int.Parse(request.downloadHandler.text.Split('\t')[2]);
                 StartCoroutine(mainmenu());
                 StartCoroutine(successful());

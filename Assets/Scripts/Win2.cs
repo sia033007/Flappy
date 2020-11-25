@@ -11,7 +11,6 @@ public class Win2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIManager2.coin_score=ObscuredPrefs.GetInt("Score");
     }
 
     // Update is called once per frame
@@ -24,6 +23,7 @@ public class Win2 : MonoBehaviour
     }
     IEnumerator win (){
     	yield return new WaitForSeconds(3f);
-    	ObscuredPrefs.SetInt("Score",UIManager2.coin_score+=20);
+    	DBManager.coin+=40;
+        DBManager.level+=1;
     }
 }

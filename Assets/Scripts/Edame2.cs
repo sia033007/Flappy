@@ -13,12 +13,11 @@ public class Edame2 : MonoBehaviour
 	public Slider slider1;
 
 	void Start (){
-		UIManager2.coin_score=ObscuredPrefs.GetInt("Score");
 	}
 
    public void edame (){
-		if(UIManager2.coin_score>=50){
-		   ObscuredPrefs.SetInt ("Score", UIManager2.coin_score-=50);
+		if(DBManager.coin>=50){
+		   DBManager.coin-=50;
 		   slider1.value=0;
 		   aud[0].UnPause();
 		   aud[1].UnPause();

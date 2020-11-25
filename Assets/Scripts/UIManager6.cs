@@ -36,25 +36,8 @@ public class UIManager6 : MonoBehaviour {
 	public GameObject coin;
 	public GameObject but1,but2,but3,but4,but5,but6;
 	
-	
-	
-
-
-
-
-
-
-
-
-
-
-	void Awake () {
-
-
-	}
 
 	void Start () {
-		UIManager2.coin_score = ObscuredPrefs.GetInt ("Score");
 		StartCoroutine (elapsed ());
 		slider1.minValue = 0;
 		slider1.maxValue = 20;
@@ -161,8 +144,7 @@ public class UIManager6 : MonoBehaviour {
 		}
 
 
-		coin_text.text = UIManager2.coin_score.ToString ();
-		ObscuredPrefs.SetInt ("Score", UIManager2.coin_score);
+		coin_text.text =""+DBManager.coin;
 
 		if (slider2.value == 10) {
 			pref1.SetActive (false);
@@ -180,8 +162,6 @@ public class UIManager6 : MonoBehaviour {
 			pref2.SetActive (false);
 			reverse = true;
 		}
-
-
 
 		if (slider2.value == 0) {
 			pref2.SetActive (true);
@@ -237,22 +217,17 @@ public class UIManager6 : MonoBehaviour {
 		pause2.SetActive(true);
 		Time.timeScale = 0;
         aud[0].Pause();
-        
-     
-		
-		
-
 	}
 
 	public void but(){
 		
 		if(slider.value<=25){
-			if(UIManager2.coin_score>=50){
+			if(DBManager.coin>=50){
 				pause2.SetActive(false);
 		        Time.timeScale=1;
 		        aud[0].UnPause();
 		        slider1.value=0;
-		       ObscuredPrefs.SetInt("Score",UIManager2.coin_score-=50);
+		        DBManager.coin-=50;
 			}
 			else {
 				StartCoroutine(tabl());
@@ -260,12 +235,12 @@ public class UIManager6 : MonoBehaviour {
 			
 		}
 		if(slider.value>25){
-			if(UIManager2.coin_score>=55){
+			if(DBManager.coin>=55){
 				pause2.SetActive(false);
 		        Time.timeScale=1;
 		        aud[0].UnPause();
                 slider1.value=0;
-		        ObscuredPrefs.SetInt("Score",UIManager2.coin_score-=55);
+		        DBManager.coin-=55;
 
 			}
 			else{
@@ -273,7 +248,6 @@ public class UIManager6 : MonoBehaviour {
 			}			
 		}
 	}
-
 	IEnumerator elapsed () {
 		yield return new WaitForSeconds (2f);
 		slider.value++;
@@ -287,6 +261,7 @@ public class UIManager6 : MonoBehaviour {
 	}
 	IEnumerator wins (){
 		yield return new WaitForSeconds (3f);
+		DBManager.level+=1;
 		win.SetActive(true);
 		aud[0].Pause();
 		audio2.SetActive(true);
@@ -294,7 +269,7 @@ public class UIManager6 : MonoBehaviour {
 		Time.timeScale=0;
 		yield return new WaitForSecondsRealtime(1f);
 		if(ObscuredPrefs.GetString("played5")!="On"){
-			ObscuredPrefs.SetInt("Score",UIManager2.coin_score+=15);
+			DBManager.coin+=25;
 		}
 		yield return new WaitForSecondsRealtime (0.2f);
 		ObscuredPrefs.SetString ("played5","On");

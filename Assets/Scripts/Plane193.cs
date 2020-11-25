@@ -19,19 +19,6 @@ public class Plane193 : MonoBehaviour {
 	public GameObject move;
 	public GameObject bullet;
 	public GameObject spawn;
-	
-
-	
-	
-
-
-
-
-
-
-
-
-
 
 	void Awake () {
 		
@@ -39,8 +26,6 @@ public class Plane193 : MonoBehaviour {
 		
 		
 	}
-
-
 	// Use this for initialization
 	void Start () {
 
@@ -49,18 +34,10 @@ public class Plane193 : MonoBehaviour {
 		sliders = GameObject.FindGameObjectWithTag ("canvas").GetComponent<UIManager2> ().slider1;
 		InvokeRepeating ("ins", 2f, 5f);
 		sli = GameObject.FindGameObjectWithTag ("canvas").GetComponent<UIManager2> ().slider;
-		
-		
-
-
-
-
-
-
 	}
 
 	void Update ()
-	{
+	{		
 		foreach(Touch t in Input.touches){
 			Vector3 pos =Camera.main.ScreenToWorldPoint(t.position);
 			if(t.phase == TouchPhase.Began && pos.x>4){
@@ -95,13 +72,7 @@ public class Plane193 : MonoBehaviour {
 	public void bulle(){
 		Instantiate(bullet,tr3.position,transform.rotation);
 		audios[0].Play();
-		
-
-
 	}
-
-	
-
 	IEnumerator bub () {
 		if (sli.value == 25) {
 			bubble.SetActive (true);
@@ -116,10 +87,6 @@ public class Plane193 : MonoBehaviour {
 			
 		}
 	}
-
-	
-
-
 }
 
 

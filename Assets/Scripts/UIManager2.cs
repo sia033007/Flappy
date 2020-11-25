@@ -8,8 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager2 : MonoBehaviour {
 
-	public static ObscuredInt coin_score = 0;
-
+	public static int coin_score;
 	public Text coin_text;
 	public Slider slider;
 	public Slider slider1;
@@ -149,7 +148,7 @@ public class UIManager2 : MonoBehaviour {
 		}
 
 
-		coin_text.text = coin_score.ToString ();
+		coin_text.text =""+DBManager.coin;
 
 		if (slider2.value == 10) {
 			pref1.SetActive (false);
@@ -225,22 +224,17 @@ public class UIManager2 : MonoBehaviour {
 		pause2.SetActive(true);
 		Time.timeScale = 0;
         aud[0].Pause();
-        
-     
-		
-		
-
 	}
 
 	public void but(){
 		
 		if(slider.value<=25){
-			if(UIManager2.coin_score>=5){
+			if(DBManager.coin>=5){
 				pause2.SetActive(false);
 		        Time.timeScale=1;
 		        aud[0].UnPause();
 		        slider1.value=0;
-				coin_score-=5;
+				DBManager.coin-=5;
 			}
 			else {
 				StartCoroutine(tabl());
@@ -248,12 +242,12 @@ public class UIManager2 : MonoBehaviour {
 			
 		}
 		if(slider.value>25){
-			if(UIManager2.coin_score>=10){
+			if(DBManager.coin>=10){
 				pause2.SetActive(false);
 		        Time.timeScale=1;
 		        aud[0].UnPause();
                 slider1.value=0;
-				coin_score-=10;
+				DBManager.coin-=10;
 
 			}
 			else{
@@ -275,6 +269,7 @@ public class UIManager2 : MonoBehaviour {
 	}
 	IEnumerator wins (){
 		yield return new WaitForSeconds (3f);
+		DBManager.level+=1;
 		win.SetActive(true);
 		aud[0].Pause();
 		audio2.SetActive(true);
@@ -282,7 +277,7 @@ public class UIManager2 : MonoBehaviour {
 		Time.timeScale=0;
 		yield return new WaitForSecondsRealtime(1f);
 		if(ObscuredPrefs.GetString("played1")!="On"){
-			coin_score+=5;
+			DBManager.coin+=5;
 		}
 		yield return new WaitForSecondsRealtime (0.2f);
 		ObscuredPrefs.SetString ("played1","On");

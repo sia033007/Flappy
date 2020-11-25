@@ -144,7 +144,7 @@ public class UIManager3 : MonoBehaviour {
 		}
 
 
-		coin_text.text = UIManager2.coin_score.ToString ();
+		coin_text.text =""+DBManager.coin;
 
 		if (slider2.value == 10) {
 			pref1.SetActive (false);
@@ -229,12 +229,12 @@ public class UIManager3 : MonoBehaviour {
 	public void but(){
 		
 		if(slider.value<=25){
-			if(UIManager2.coin_score>=10){
+			if(DBManager.coin>=10){
 				pause2.SetActive(false);
 		        Time.timeScale=1;
 		        aud[0].UnPause();
 		        slider1.value=0;
-				UIManager2.coin_score-=10;
+				DBManager.coin-=10;
 			}
 			else {
 				StartCoroutine(tabl());
@@ -242,12 +242,12 @@ public class UIManager3 : MonoBehaviour {
 			
 		}
 		if(slider.value>25){
-			if(UIManager2.coin_score>=15){
+			if(DBManager.coin>=15){
 				pause2.SetActive(false);
 		        Time.timeScale=1;
 		        aud[0].UnPause();
                 slider1.value=0;
-				UIManager2.coin_score-=15;
+				DBManager.coin-=15;
 
 			}
 			else{
@@ -269,6 +269,7 @@ public class UIManager3 : MonoBehaviour {
 	}
 	IEnumerator wins (){
 		yield return new WaitForSeconds (3f);
+		DBManager.level+=1;
 		win.SetActive(true);
 		aud[0].Pause();
 		audio2.SetActive(true);
@@ -276,7 +277,7 @@ public class UIManager3 : MonoBehaviour {
 		Time.timeScale=0;
 		yield return new WaitForSecondsRealtime(1f);
 		if(ObscuredPrefs.GetString("played2")!="On"){
-			UIManager2.coin_score+=10;
+			DBManager.coin+=10;
 		}
 		yield return new WaitForSecondsRealtime (0.2f);
 		ObscuredPrefs.SetString ("played2","On");

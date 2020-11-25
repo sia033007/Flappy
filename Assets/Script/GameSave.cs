@@ -1,21 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Networking;
-using System;
 
-public class SaveGame : MonoBehaviour
+public class GameSave : MonoBehaviour
 {
-    public Text userDisplay;
-    public Text scoreDisplay;
-    public Text levelDisplay;
-
     private void Awake() {
         DontDestroyOnLoad(this);
-        userDisplay.text = DBManager.username;
-        scoreDisplay.text =""+UIManager2.coin_score;
-        levelDisplay.text = ""+DBManager.level;
     }
     public void saveData()
     {
@@ -25,7 +16,7 @@ public class SaveGame : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("name",DBManager.username);
-        form.AddField("score",UIManager2.coin_score);
+        form.AddField("score",DBManager.coin);
         form.AddField("level",DBManager.level);
         using(UnityWebRequest request = UnityWebRequest.Post("http://aminunity.orgfree.com/samplegame.php",form))
         {

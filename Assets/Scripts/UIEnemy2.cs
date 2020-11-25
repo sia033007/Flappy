@@ -45,7 +45,6 @@ public class UIEnemy2 : MonoBehaviour
 	}
 
 	void Start () {
-		UIManager2.coin_score = ObscuredPrefs.GetInt ("Score");
 		
 		if (MainMenu3.chnum == 1) {
 
@@ -81,8 +80,7 @@ public class UIEnemy2 : MonoBehaviour
 	}
 
 	void Update () {
-		coin_text.text = UIManager2.coin_score.ToString ();
-		ObscuredPrefs.SetInt ("Score", UIManager2.coin_score);
+		coin_text.text =""+DBManager.coin;
 		
         timer += Time.deltaTime;
 
