@@ -28,6 +28,11 @@ public class Login : MonoBehaviour
                 DBManager.username = nameField.text;
                 DBManager.coin = int.Parse(request.downloadHandler.text.Split('\t')[1]);
                 DBManager.level = int.Parse(request.downloadHandler.text.Split('\t')[2]);
+                DBManager.planetwo = int.Parse(request.downloadHandler.text.Split('\t')[3]);
+                DBManager.planethree = int.Parse(request.downloadHandler.text.Split('\t')[4]);
+                DBManager.planefour = int.Parse(request.downloadHandler.text.Split('\t')[5]);
+                DBManager.planefive = int.Parse(request.downloadHandler.text.Split('\t')[6]);
+                DBManager.dragon = int.Parse(request.downloadHandler.text.Split('\t')[7]);
                 StartCoroutine(mainmenu());
                 StartCoroutine(successful());
                 Debug.Log("Log in successfully!");

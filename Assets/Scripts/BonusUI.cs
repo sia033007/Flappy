@@ -30,7 +30,6 @@ public class BonusUI : MonoBehaviour {
 
 		
 		StartCoroutine(elapsed());
-		UIManager2.coin_score=ObscuredPrefs.GetInt("Score");
 	}	
 
 	void Update () {
@@ -38,8 +37,7 @@ public class BonusUI : MonoBehaviour {
 		finalscore.text= score.ToString();
 		if(slider.value==35){
 		    audio1.SetActive(true);
-		    StartCoroutine(win());
-			ObscuredPrefs.SetInt("Leader",score);		
+		    StartCoroutine(win());		
 		}
 		else{
 			audio1.SetActive(false);
@@ -86,9 +84,6 @@ public class BonusUI : MonoBehaviour {
 		warn.SetActive(true);
 		yield return new WaitForSeconds (4f);
 		warn.SetActive(false);
-	}
-	public void leader(){
-		SceneManager.LoadScene("LeaderBoard");
 	}
 	
 }

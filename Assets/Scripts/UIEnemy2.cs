@@ -36,13 +36,6 @@ public class UIEnemy2 : MonoBehaviour
 	public GameObject explosion;
 	public GameObject coin;
 	public GameObject but1,but2,but3,but4,but5,but6;
-	
-
-	void Awake () {
-		
-
-
-	}
 
 	void Start () {
 		

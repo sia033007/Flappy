@@ -10,17 +10,10 @@ public class PauseEnemy3 : MonoBehaviour
    public GameObject pause,win;
    public AudioSource [] aud;
     // Start is called before the first frame update
-    void Start()
-    {
-        PlayerPrefs.GetString("Level10");
-    }
 
     // Update is called once per frame
     void Update()
     {
-         if(win.activeInHierarchy==true){
-            PlayerPrefs.SetString("Level10","On");
-        }
        if(Input.GetKeyDown(KeyCode.Escape)){
 			pause.SetActive(true);
 		    Time.timeScale = 0;

@@ -23,7 +23,7 @@ public class Win3 : MonoBehaviour
     }
     IEnumerator win (){
     	yield return new WaitForSeconds(3f);
-    	DBManager.coin+=60;
-        DBManager.level+=1;
+        DBManager.coin+=60;
+        DBManager.level+=1;  	
     }
 }

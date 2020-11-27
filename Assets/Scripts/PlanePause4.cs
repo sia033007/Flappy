@@ -10,17 +10,10 @@ public class PlanePause4 : MonoBehaviour
 	public AudioSource[]aud;
 	public Slider slider;
     // Start is called before the first frame update
-    void Start()
-    {
-       PlayerPrefs.GetString("Level6");  
-    }
 
     // Update is called once per frame
     void Update()
     {
-    	if(win.activeInHierarchy==true){
-    		PlayerPrefs.SetString("Level6","On");
-    	}
        if(Input.GetKeyDown(KeyCode.Escape)){
 			pausepanel.SetActive(true);
 		    Time.timeScale = 0;

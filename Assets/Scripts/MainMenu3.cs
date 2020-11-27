@@ -30,49 +30,47 @@ public class MainMenu3 : MonoBehaviour {
 
 
 
-void Start () {
-		
-		ObscuredPrefs.SetString ("BluePlane", "on");
-		if (ObscuredPrefs.GetString ("Plane2") == "on") {
-			wood1.SetActive (false);
-		}
-		if (ObscuredPrefs.GetString ("Plane3") == "on") {
-			wood2.SetActive (false);
-		}
-		if (ObscuredPrefs.GetString ("Plane4") == "on") {
-			wood3.SetActive (false);
-		}
-		if (ObscuredPrefs.GetString ("Plane5") == "on") {
-			wood4.SetActive (false);
-		}
-		if (ObscuredPrefs.GetString ("Dragon") == "on") {
-			wood5.SetActive (false);
-		}
-
-		isPlanesold = ObscuredPrefs.GetInt ("isPlanesold") == 0 ? false:true;
-
-		}
+void Start ()
+{
+	if(DBManager.planetwo ==1)
+	{
+		wood1.SetActive(false);
+	}
+	else if(DBManager.planethree ==1)
+	{
+		wood2.SetActive(false);
+	}
+	else if(DBManager.planefour ==1)
+	{
+		wood3.SetActive(false);
+	}
+	else if(DBManager.planefive ==1)
+	{
+		wood4.SetActive(false);
+	}
+	else if(DBManager.dragon ==1)
+	{
+		wood5.SetActive(false);
+	}
+}
 
 
 	public void Blueplane () {	
-		chnum = 1;	
-		ObscuredPrefs.Save ();
+		chnum = 1;
 		SceneManager.LoadScene ("Menu5");
 	}
 
 	public void BuyPlane2 () {
 
-		if (ObscuredPrefs.GetString ("Plane2") == "on") { 
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
-		    chnum = 2;
-			ObscuredPrefs.Save ();
+		if(DBManager.planetwo ==1)
+		{
+			chnum = 2;
 			SceneManager.LoadScene ("Menu5");
-		} else if (DBManager.coin>=60) {
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
+		}		   
+	     else if (DBManager.coin>=60) {
+			DBManager.planetwo=1;
 			chnum = 2;
 			DBManager.coin-=60;
-			ObscuredPrefs.Save ();
-			ObscuredPrefs.SetString ("Plane2", "on");
 			SceneManager.LoadScene ("Menu5");
 
 			}
@@ -81,23 +79,19 @@ void Start () {
 			Debug.Log ("You Don't Have The Score");
 		
 		}
-
-
 	}
 
 	public void BuyPlane3 () {
 
-		if (ObscuredPrefs.GetString ("Plane3") == "on") { 
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
+		if(DBManager.planethree ==1)
+		{
 			chnum = 3;
-			ObscuredPrefs.Save ();
 			SceneManager.LoadScene ("Menu5");
-		} else if (DBManager.coin>=120) {
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
+		}			
+	    else if (DBManager.coin>=120) {
+			DBManager.planethree=1;
 			chnum = 3;
 			DBManager.coin-=120;
-			ObscuredPrefs.Save ();
-			ObscuredPrefs.SetString ("Plane3", "on");
 			SceneManager.LoadScene ("Menu5");
 
 		}
@@ -106,87 +100,67 @@ void Start () {
 			Debug.Log ("You Don't Have The Score");
 
 		}
-
-
 	}
-
 
 	public void BuyPlane4 () {
 
-		if (ObscuredPrefs.GetString ("Plane4") == "on") { 
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
+		if (DBManager.planefour ==1)
+		{
 			chnum = 4;
-			ObscuredPrefs.Save ();
 			SceneManager.LoadScene ("Menu5");
-		} else if (DBManager.coin>=180) {
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
+		}			
+	    else if (DBManager.coin>=180) {
+			DBManager.planefour=1;
 		    chnum = 4;
 			DBManager.coin-=180;
-			ObscuredPrefs.Save ();
-			ObscuredPrefs.SetString ("Plane4", "on");
 			SceneManager.LoadScene ("Menu5");
-
 		}
 		else 
 		{
 			Debug.Log ("You Don't Have The Score");
 
 		}
-
-
 	}
 
 	public void BuyPlane5 () {
 
-		if (ObscuredPrefs.GetString ("Plane5") == "on") { 
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
-            chnum = 5;
-			ObscuredPrefs.Save ();
+		if (DBManager.planefive ==1)
+		{
+			 chnum = 5;
 			SceneManager.LoadScene ("Menu5");
-		} else if (DBManager.coin>=240) {
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
+		}          
+		else if (DBManager.coin>=240) {
+			DBManager.planefive=1;
 		    chnum = 5;
 			DBManager.coin-=240;
-			ObscuredPrefs.Save ();
-			ObscuredPrefs.SetString ("Plane5", "on");
 			SceneManager.LoadScene ("Menu5");
-
 		}
 		else 
 		{
 			Debug.Log ("You Don't Have The Score");
 
 		}
-
-
 	}
 	public void BuyDragon () {
 
-		if (ObscuredPrefs.GetString ("Dragon") == "on") { 
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
+		if (DBManager.dragon ==1)
+		{
 			chnum = 6;
-			ObscuredPrefs.Save ();
 			SceneManager.LoadScene ("Menu5");
-		} else if (DBManager.coin>=300) {
-			ObscuredPrefs.SetInt ("isPlanesold", 1);
+		}			
+	    else if (DBManager.coin>=300) {
+			DBManager.dragon =1;
 			chnum = 6;
 			DBManager.coin-=300;
-			ObscuredPrefs.Save ();
-			ObscuredPrefs.SetString ("Dragon", "on");
 			SceneManager.LoadScene ("Menu5");
-
 		}
 		else 
 		{
 			Debug.Log ("You Don't Have The Score");
 
 		}
-
-
 	}
 	
-
-
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape))
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex - 1);
@@ -244,8 +218,6 @@ void Start () {
 			StartCoroutine (fr5());
 
 		}
-
-
 			
 }
 

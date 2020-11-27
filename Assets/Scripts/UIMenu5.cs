@@ -14,49 +14,257 @@ public class UIMenu5 : MonoBehaviour
     void Start()
     {
         SceneIndex = SceneManager.GetActiveScene ().buildIndex;
-        PlayerPrefs.SetString("Level1","On");
-        if(PlayerPrefs.GetString("Level2")=="On"){
-        	lo1.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level3")=="On"){
-        	lo2.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level4")=="On"){
-        	lo3.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level5")=="On"){
-        	lo4.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level6")=="On"){
-        	lo5.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level7")=="On"){
-        	lo6.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level8")=="On"){
-        	lo7.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level9")=="On"){
-        	lo8.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level10")=="On"){
-        	lo9.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level11")=="On"){
-        	lo10.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level12")=="On"){
-        	lo11.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level13")=="On"){
-        	lo12.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level14")=="On"){
-        	lo13.SetActive(false);
-        }
-        if(PlayerPrefs.GetString("Level15")=="On"){
-        	lo14.SetActive(false);
-        }
+        if(DBManager.level==2)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+		}
+		if(DBManager.level==3)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+		}
+		if(DBManager.level==4)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+		}
+		if(DBManager.level==5)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+		}
+		if(DBManager.level==6)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+		}
+		if(DBManager.level==7)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+		}
+		if(DBManager.level==8)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+			lo7.SetActive(false);
+			l7.interactable = false;
+		}
+		if(DBManager.level==9)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+			lo7.SetActive(false);
+			l7.interactable = false;
+			lo8.SetActive(false);
+			l8.interactable = false;
+		}
+		if(DBManager.level==10)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+			lo7.SetActive(false);
+			l7.interactable = false;
+			lo8.SetActive(false);
+			l8.interactable = false;
+			lo9.SetActive(false);
+			l9.interactable = false;
+		}
+		if(DBManager.level==11)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+			lo7.SetActive(false);
+			l7.interactable = false;
+			lo8.SetActive(false);
+			l8.interactable = false;
+			lo9.SetActive(false);
+			l9.interactable = false;
+			lo10.SetActive(false);
+			l10.interactable = false;
+		}
+		if(DBManager.level==12)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+			lo7.SetActive(false);
+			l7.interactable = false;
+			lo8.SetActive(false);
+			l8.interactable = false;
+			lo9.SetActive(false);
+			l9.interactable = false;
+			lo10.SetActive(false);
+			l10.interactable = false;
+			lo11.SetActive(false);
+			l11.interactable = false;
+		}
+		if(DBManager.level==13)
+		{
+			lo1.SetActive(false);
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+			lo7.SetActive(false);
+			l7.interactable = false;
+			lo8.SetActive(false);
+			l8.interactable = false;
+			lo9.SetActive(false);
+			l9.interactable = false;
+			lo10.SetActive(false);
+			l10.interactable = false;
+			lo11.SetActive(false);
+			l11.interactable = false;
+			lo12.SetActive(false);
+			l12.interactable = false;
+		}
+		if(DBManager.level==14)
+		{
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+			lo7.SetActive(false);
+			l7.interactable = false;
+			lo8.SetActive(false);
+			l8.interactable = false;
+			lo9.SetActive(false);
+			l9.interactable = false;
+			lo10.SetActive(false);
+			l10.interactable = false;
+			lo11.SetActive(false);
+			l11.interactable = false;
+			lo12.SetActive(false);
+			l12.interactable = false;
+			lo13.SetActive(false);
+			l13.interactable = false;
+		}
+		if(DBManager.level==15)
+		{
+			l1.interactable = false;
+			lo2.SetActive(false);
+			l2.interactable = false;
+			lo3.SetActive(false);
+			l3.interactable = false;
+			lo4.SetActive(false);
+			l4.interactable = false;
+			lo5.SetActive(false);
+			l5.interactable = false;
+			lo6.SetActive(false);
+			l6.interactable = false;
+			lo7.SetActive(false);
+			l7.interactable = false;
+			lo8.SetActive(false);
+			l8.interactable = false;
+			lo9.SetActive(false);
+			l9.interactable = false;
+			lo10.SetActive(false);
+			l10.interactable = false;
+			lo11.SetActive(false);
+			l11.interactable = false;
+			lo12.SetActive(false);
+			l12.interactable = false;
+			lo13.SetActive(false);
+			l13.interactable = false;
+			lo14.SetActive(false);
+			l14.interactable = false;
+		}
+
     }
 
     // Update is called once per frame
@@ -72,102 +280,103 @@ public class UIMenu5 : MonoBehaviour
 
         	});
         l2.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level2")=="On"){
-        		load.SetActive(true);
-        		SceneManager.LoadScene("Knight2");
-        	}
+			if(lo1.activeInHierarchy == false)
+			{
+			load.SetActive(true);
+        	SceneManager.LoadScene("Knight2");
 
+			}
         	});
         l3.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level3")=="On"){
+        	if(lo2.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Enemy1");
         	}
 
         	});
         l4.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level4")=="On"){
+        	if(lo3.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Western1");
         	}
 
         	});
         l5.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level5")=="On"){
+        	if(lo4.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Western2");
         	}
 
         	});
         l6.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level6")=="On"){
+        	if(lo5.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Enemy2");
         	}
 
         	});
         l7.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level7")=="On"){
+        	if(lo6.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Chris1");
         	}
 
         	});
         l8.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level8")=="On"){
+        	if(lo7.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Chris2");
         	}
 
         	});
         l9.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level9")=="On"){
+        	if(lo8.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Enemy3");
         	}
 
         	});
         l10.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level10")=="On"){
+        	if(lo9.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Sea1");
         	}
 
         	});
         l11.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level11")=="On"){
+        	if(lo10.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Sea2");
         	}
 
         	});
         l12.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level12")=="On"){
+        	if(lo11.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Enemy4");
         	}
 
         	});
         l13.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level13")=="On"){
+        	if(lo12.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Factory1");
         	}
 
         	});
         l14.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level14")=="On"){
+        	if(lo13.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Factory2");
         	}
 
         	});
         l15.onClick.AddListener(() =>{
-        	if(PlayerPrefs.GetString("Level15")=="On"){
+        	if(lo14.activeInHierarchy == false){
         		load.SetActive(true);
         		SceneManager.LoadScene("Enemy5");
         	}
 
-        	});
+       	});
     }
 }

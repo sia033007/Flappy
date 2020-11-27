@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour {
         	nogift.SetActive(false);
 		}
 		ObscuredPrefs.SetString("Shop","Off");
+		ObscuredPrefs.SetString("save","off");
 
 	}	
 	
@@ -32,153 +33,6 @@ public class MainMenu : MonoBehaviour {
         	gift.SetActive(true);
         	nogift.SetActive(false);
         }
-		if(DBManager.level == 2)
-		{
-			PlayerPrefs.SetString("Level2","On");
-		}
-		else if(DBManager.level == 3)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-		}
-		else if(DBManager.level == 4)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-		}
-		else if(DBManager.level == 5)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-		}
-		else if(DBManager.level == 6)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-		}
-		else if(DBManager.level == 7)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-		}
-		else if(DBManager.level == 8)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-			PlayerPrefs.SetString("Level8","On");
-		}
-		else if(DBManager.level == 9)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-			PlayerPrefs.SetString("Level8","On");
-			PlayerPrefs.SetString("Level9","On");
-		}
-		else if(DBManager.level == 10)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-			PlayerPrefs.SetString("Level8","On");
-			PlayerPrefs.SetString("Level9","On");
-			PlayerPrefs.SetString("Level10","On");
-		}
-		else if(DBManager.level == 11)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-			PlayerPrefs.SetString("Level8","On");
-			PlayerPrefs.SetString("Level9","On");
-			PlayerPrefs.SetString("Level10","On");
-			PlayerPrefs.SetString("Level11","On");
-		}
-		else if(DBManager.level == 12)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-			PlayerPrefs.SetString("Level8","On");
-			PlayerPrefs.SetString("Level9","On");
-			PlayerPrefs.SetString("Level10","On");
-			PlayerPrefs.SetString("Level11","On");
-			PlayerPrefs.SetString("Level12","On");
-		}
-		else if(DBManager.level ==13)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-			PlayerPrefs.SetString("Level8","On");
-			PlayerPrefs.SetString("Level9","On");
-			PlayerPrefs.SetString("Level10","On");
-			PlayerPrefs.SetString("Level11","On");
-			PlayerPrefs.SetString("Level12","On");
-			PlayerPrefs.SetString("Level13","On");
-		}
-		else if(DBManager.level == 14)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-			PlayerPrefs.SetString("Level8","On");
-			PlayerPrefs.SetString("Level9","On");
-			PlayerPrefs.SetString("Level10","On");
-			PlayerPrefs.SetString("Level11","On");
-			PlayerPrefs.SetString("Level12","On");
-			PlayerPrefs.SetString("Level13","On");
-			PlayerPrefs.SetString("Level14","On");
-		}
-		else if(DBManager.level == 15)
-		{
-			PlayerPrefs.SetString("Level2","On");
-			PlayerPrefs.SetString("Level3","On");
-			PlayerPrefs.SetString("Level4","On");
-			PlayerPrefs.SetString("Level5","On");
-			PlayerPrefs.SetString("Level6","On");
-			PlayerPrefs.SetString("Level7","On");
-			PlayerPrefs.SetString("Level8","On");
-			PlayerPrefs.SetString("Level9","On");
-			PlayerPrefs.SetString("Level10","On");
-			PlayerPrefs.SetString("Level11","On");
-			PlayerPrefs.SetString("Level12","On");
-			PlayerPrefs.SetString("Level13","On");
-			PlayerPrefs.SetString("Level14","On");
-			PlayerPrefs.SetString("Level15","On");
-		}		
 	}
 
 
@@ -229,7 +83,11 @@ public class MainMenu : MonoBehaviour {
 		SceneManager.LoadScene ("tamas");
 	}
 	public void Bonus () {
-		SceneManager.LoadScene(Random.Range(20,24));
+		SceneManager.LoadScene(Random.Range(23,28));
+	}
+	public void GoToScoreBoard()
+	{
+		SceneManager.LoadScene("Leader");
 	}
 	public void RateUs(){
 		AndroidJavaClass intentClass = new AndroidJavaClass ("android.content.Intent");

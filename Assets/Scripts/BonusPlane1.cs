@@ -49,7 +49,7 @@ public class BonusPlane1 : MonoBehaviour {
 	}
 	IEnumerator win (){
 		yield return new WaitForSeconds (1f);
-		ObscuredPrefs.SetInt("Score",UIManager2.coin_score+=BonusUI.score);
+		DBManager.coin+=BonusUI.score;
 	}
 	void OnTriggerEnter2D (Collider2D col){
 		if(col.tag == "Coin"){

@@ -250,23 +250,15 @@ public class UIManager9 : MonoBehaviour {
 	}
 	IEnumerator wins (){
 		yield return new WaitForSeconds (3f);
-		DBManager.level+=1;
 		win.SetActive(true);
 		aud[0].Pause();
 		audio2.SetActive(true);
 		coin.SetActive(false);
 		Time.timeScale=0;
 		yield return new WaitForSecondsRealtime(1f);
-		if(ObscuredPrefs.GetString("played8")!="On"){
-			DBManager.coin+=40;
-		}
-		yield return new WaitForSecondsRealtime (0.2f);
-		ObscuredPrefs.SetString ("played8","On");
-
-	}
-	
-
-	
+		DBManager.coin+=40;
+		DBManager.level+=1;
+	}	
 }
 		
 	

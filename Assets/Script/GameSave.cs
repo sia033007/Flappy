@@ -18,6 +18,12 @@ public class GameSave : MonoBehaviour
         form.AddField("name",DBManager.username);
         form.AddField("score",DBManager.coin);
         form.AddField("level",DBManager.level);
+        form.AddField("planetwo",DBManager.planetwo);
+        form.AddField("planethree",DBManager.planethree);
+        form.AddField("planefour",DBManager.planefour);
+        form.AddField("planefive",DBManager.planefive);
+        form.AddField("dragon",DBManager.dragon);
+
         using(UnityWebRequest request = UnityWebRequest.Post("http://aminunity.orgfree.com/samplegame.php",form))
         {
             yield return request.SendWebRequest();

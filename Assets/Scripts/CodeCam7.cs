@@ -91,7 +91,19 @@ public class CodeCam7 : MonoBehaviour {
 		ObscuredPrefs.SetString("Shop","On");
 
 	}
+	public void GoToLeaderboards()
+	{
+		StartCoroutine(GoToLead());
+
+
 	}
+	IEnumerator GoToLead (){
+		yield return new WaitForSecondsRealtime (1f);
+		SceneManager.LoadScene("Leader",LoadSceneMode.Additive);
+		ObscuredPrefs.SetString("save","On");
+
+	}
+}
 
 
 
