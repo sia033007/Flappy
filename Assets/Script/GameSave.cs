@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using CodeStage.AntiCheat.ObscuredTypes;
+using CodeStage.AntiCheat.Detectors;
 
 public class GameSave : MonoBehaviour
 {
@@ -39,11 +41,20 @@ public class GameSave : MonoBehaviour
     }
     private void OnApplicationFocus(bool focusStatus) {
         if(!focusStatus)
-        saveData();
+        {
+            saveData();
+            ObscuredPrefs.SetString ("Bonus","On");
+     	    ObscuredPrefs.Save();        
+            ObscuredPrefs.SetString("firstplay","no");
+        }
     }
     private void OnApplicationPause(bool pauseStatus) {
         if(pauseStatus)
-        saveData();
-    }
-    
+        {
+            saveData();
+            ObscuredPrefs.SetString ("Bonus","On");
+     	    ObscuredPrefs.Save();      
+            ObscuredPrefs.SetString("firstplay","no");
+        }
+    }   
 }

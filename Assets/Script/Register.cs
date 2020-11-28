@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class Register : MonoBehaviour
 {
@@ -66,6 +67,10 @@ public class Register : MonoBehaviour
     IEnumerator mainmenu()
     {
         yield return new WaitForSeconds(3f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("WlecomeScene");
+        SceneManager.LoadScene("WlecomeScene");
+    }
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
     }
 }

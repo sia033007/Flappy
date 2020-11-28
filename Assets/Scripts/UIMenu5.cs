@@ -208,6 +208,7 @@ public class UIMenu5 : MonoBehaviour
 		}
 		if(DBManager.level==14)
 		{
+			lo1.SetActive(false);
 			l1.interactable = false;
 			lo2.SetActive(false);
 			l2.interactable = false;
@@ -236,6 +237,7 @@ public class UIMenu5 : MonoBehaviour
 		}
 		if(DBManager.level==15)
 		{
+			lo1.SetActive(false);
 			l1.interactable = false;
 			lo2.SetActive(false);
 			l2.interactable = false;

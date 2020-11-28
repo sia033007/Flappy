@@ -36,19 +36,19 @@ void Start ()
 	{
 		wood1.SetActive(false);
 	}
-	else if(DBManager.planethree ==1)
+	if(DBManager.planethree ==1)
 	{
 		wood2.SetActive(false);
 	}
-	else if(DBManager.planefour ==1)
+	if(DBManager.planefour ==1)
 	{
 		wood3.SetActive(false);
 	}
-	else if(DBManager.planefive ==1)
+	if(DBManager.planefive ==1)
 	{
 		wood4.SetActive(false);
 	}
-	else if(DBManager.dragon ==1)
+	if(DBManager.dragon ==1)
 	{
 		wood5.SetActive(false);
 	}

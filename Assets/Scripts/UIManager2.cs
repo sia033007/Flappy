@@ -270,7 +270,7 @@ public class UIManager2 : MonoBehaviour {
 		coin.SetActive(false);
 		Time.timeScale=0;
 		yield return new WaitForSecondsRealtime(1f);
-		DBManager.coin+=500;
+		DBManager.coin+=5;
 		DBManager.level+=1;
 	}	
 }

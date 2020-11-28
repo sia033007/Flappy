@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using CodeStage.AntiCheat.ObscuredTypes;
 using CodeStage.AntiCheat.Detectors;
+using UnityEngine.Networking;
 public class MainMenu : MonoBehaviour {
 
 	int SceneIndex;
@@ -12,7 +13,6 @@ public class MainMenu : MonoBehaviour {
 	public GameObject gift,nogift,bonuslevel;
 
 	void Awake (){
-		ObscuredPrefs.GetString("firstplay","yes");
 		if(ObscuredPrefs.GetString("firstplay")!="no"){
 			gift.SetActive(true);
         	nogift.SetActive(false);
@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour {
 			gift.SetActive(false);
 			nogift.SetActive(true);      	
         }
-        else if(ObscuredPrefs.GetString("Bonus")=="On" && Date.click==true){
+        if(ObscuredPrefs.GetString("Bonus")=="On" && Date.click==true){
         	gift.SetActive(true);
         	nogift.SetActive(false);
         }
@@ -87,21 +87,13 @@ public class MainMenu : MonoBehaviour {
 	}
 	public void GoToScoreBoard()
 	{
+		
 		SceneManager.LoadScene("Leader");
 	}
-	public void RateUs(){
-		AndroidJavaClass intentClass = new AndroidJavaClass ("android.content.Intent");
-AndroidJavaObject intentObject = new AndroidJavaObject ("android.content.Intent");
- 
-AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
- 
-intentObject.Call<AndroidJavaObject> ("setAction", intentClass.GetStatic<string> ("ACTION_EDIT"));
-intentObject.Call<AndroidJavaObject> ("setData", uriClass.CallStatic<AndroidJavaObject>("parse","bazaar://details?id=com.Gameone.Tayyare"));
-intentObject.Call<AndroidJavaObject>("setPackage", "com.farsitel.bazaar");
- 
-AndroidJavaClass unity = new AndroidJavaClass ("com.unity3d.player.UnityPlayer");
-AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject> ("currentActivity");
-currentActivity.Call ("startActivity", intentObject);
+	public void RateUs()
+	{
+		Application.OpenURL("bazaar://details?id=com.Gameone.Tayyare");
+		ObscuredPrefs.SetString ("Bonus","Off");
 	}
 	IEnumerator bon (){
 		yield return new WaitForSeconds (1f);
@@ -112,29 +104,35 @@ currentActivity.Call ("startActivity", intentObject);
 	public void bonuses (){
 		StartCoroutine (bon());
 	}
-	void OnApplicationFocus(bool focus)
-     {
-     	if(!focus){
-     		ObscuredPrefs.SetString ("Bonus","On");
-     	    ObscuredPrefs.Save();  
-     	}
-     	else{
-     		ObscuredPrefs.SetString("firstplay","no");
-     		ObscuredPrefs.Save();
-     	}
-     	     
-     }
-     void OnApplicationPause(bool pauseStatus){
-     	if(pauseStatus){
-     		ObscuredPrefs.SetString ("Bonus","On");
-     	    ObscuredPrefs.Save(); 
-     	}
-     	else{
-     		ObscuredPrefs.SetString("firstplay","no");
-     		ObscuredPrefs.Save();
-     	}
+	IEnumerator dataSave()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("name",DBManager.username);
+        form.AddField("score",DBManager.coin);
+        form.AddField("level",DBManager.level);
+        form.AddField("planetwo",DBManager.planetwo);
+        form.AddField("planethree",DBManager.planethree);
+        form.AddField("planefour",DBManager.planefour);
+        form.AddField("planefive",DBManager.planefive);
+        form.AddField("dragon",DBManager.dragon);
 
-     }   
+        using(UnityWebRequest request = UnityWebRequest.Post("http://aminunity.orgfree.com/samplegame.php",form))
+        {
+            yield return request.SendWebRequest();
+            if(request.downloadHandler.text == "0")
+            {
+                Debug.Log("Game saved");
+            }
+            else
+            {
+                Debug.Log("Save failed" + request.downloadHandler.text);
+            }
+        }
+    }
+	public void SaveData()
+	{
+		StartCoroutine(dataSave());
+	}
 }
 
 

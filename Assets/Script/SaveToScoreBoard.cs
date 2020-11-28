@@ -19,12 +19,6 @@ public class SaveToScoreBoard : MonoBehaviour
         {
             update.SetActive(true);
             backButton.gameObject.SetActive(true);
-
-        }
-        else
-        {
-            update.SetActive(false);
-            backButton.gameObject.SetActive(false);
         }
         
     }
@@ -35,7 +29,7 @@ public class SaveToScoreBoard : MonoBehaviour
     }
     IEnumerator disableupdate()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         update.SetActive(false);
     }
     public void Back()

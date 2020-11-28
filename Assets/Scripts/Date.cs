@@ -27,7 +27,7 @@
               //Convert the old time from binary to a DataTime variable
               var oldDate = DateTime.FromBinary(temp);
               var difference = currentDate.Subtract(oldDate);
-              if(difference.TotalMinutes>Random.Range(4,5))
+              if(difference.TotalHours>Random.Range(4,5))
               {
                   click=true;
                   
