@@ -54,7 +54,7 @@ public class BonusPlane2 : MonoBehaviour {
 		Instantiate (coin, new Vector3 (Random.Range (-height, height),5, 0), transform.rotation);
 	}
 	IEnumerator win (){
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds(1f);
 		DBManager.coin+=BonusUI.score;
 	}
 	void OnTriggerEnter2D (Collider2D col){

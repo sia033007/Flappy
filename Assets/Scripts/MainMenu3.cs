@@ -32,6 +32,7 @@ public class MainMenu3 : MonoBehaviour {
 
 void Start ()
 {
+	ObscuredPrefs.SetString ("Bonus","Off");
 	if(DBManager.planetwo ==1)
 	{
 		wood1.SetActive(false);

@@ -38,12 +38,16 @@ public class Plane193 : MonoBehaviour {
 
 	void Update ()
 	{		
-		foreach(Touch t in Input.touches){
+		/*foreach(Touch t in Input.touches){
 			Vector3 pos =Camera.main.ScreenToWorldPoint(t.position);
 			if(t.phase == TouchPhase.Began && pos.x>4){
 				rb.velocity=Vector2.up*velocity;
 			} 
-		} 
+		} */
+		if(Input.GetMouseButtonDown(0))
+		{
+			rb.velocity=Vector2.up*velocity;
+		}
 	
 		StartCoroutine (bub ());
 

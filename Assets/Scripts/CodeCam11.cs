@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using CodeStage.AntiCheat.ObscuredTypes;
+using CodeStage.AntiCheat.Detectors;
 
 public class CodeCam11 : MonoBehaviour {
 
@@ -19,8 +21,9 @@ public class CodeCam11 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape))
+		{
 			SceneManager.LoadScene (SceneIndex -3);
-
+		}
 
 	}
 	IEnumerator ghool (){

@@ -93,15 +93,9 @@ public class CodeCam7 : MonoBehaviour {
 	}
 	public void GoToLeaderboards()
 	{
-		StartCoroutine(GoToLead());
-
-
-	}
-	IEnumerator GoToLead (){
-		yield return new WaitForSecondsRealtime (1f);
-		SceneManager.LoadScene("Leader",LoadSceneMode.Additive);
+		Time.timeScale=1;
 		ObscuredPrefs.SetString("save","On");
-
+		SceneManager.LoadScene("Leader");
 	}
 }
 

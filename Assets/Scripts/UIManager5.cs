@@ -272,7 +272,6 @@ public class UIManager5 : MonoBehaviour {
 		yield return new WaitForSecondsRealtime(1f);
 		DBManager.coin+=20;
 		DBManager.level+=1;
-
 	}
 	
 }

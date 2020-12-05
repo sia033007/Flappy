@@ -267,7 +267,7 @@ public class UIManager4 : MonoBehaviour {
 		audio2.SetActive(true);
 		coin.SetActive(false);
 		Time.timeScale=0;
-		yield return new WaitForSecondsRealtime(1f);		
+		yield return new WaitForSecondsRealtime(1f);
 		DBManager.coin+=15;
 		DBManager.level+=1;
 	}	
